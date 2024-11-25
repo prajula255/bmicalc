@@ -1,4 +1,3 @@
-
 import './App.css';
 import React, { useState } from "react";
 
@@ -9,8 +8,6 @@ function App() {
   const [bmi, setBMI] = useState(null);
   const [category, setCategory] = useState("");
   const [error, setError] = useState("");
-
-
 
   const calculateBMI = () => {
     const heightInMeters = height / 100;
@@ -44,7 +41,6 @@ function App() {
     setError("");
   };
 
-
   const getCategoryColor = (category) =>
     category === "Underweight" ? "blue" :
       category === "Normal weight" ? "green" :
@@ -52,19 +48,18 @@ function App() {
           "red";
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.header}>BMI Calculator</h1>
+    <div className="container">
+      <h1 className="header">BMI Calculator</h1>
 
-      <div style={styles.inputContainer}>
-        <strong>Gender:</strong>
-        <div>
+      <div className="input-group">
+        <label className="label">Gender:</label>
+        <div className="radio-group">
           <label>
             <input
               type="radio"
               value="male"
               checked={gender === "male"}
               onChange={(e) => setGender(e.target.value)}
-              style={styles.radio}
             />
             Male
           </label>
@@ -74,7 +69,6 @@ function App() {
               value="female"
               checked={gender === "female"}
               onChange={(e) => setGender(e.target.value)}
-              style={styles.radio}
             />
             Female
           </label>
@@ -84,56 +78,46 @@ function App() {
               value="other"
               checked={gender === "other"}
               onChange={(e) => setGender(e.target.value)}
-              style={styles.radio}
             />
             Other
           </label>
         </div>
       </div>
 
-
-      <div style={styles.inputContainer}>
-        <label>
-          <strong>Height (cm):</strong>
-          <input
-            type="number"
-            value={height}
-            onChange={(e) => setHeight(e.target.value)}
-            placeholder="Enter height in cm"
-            style={styles.input}
-          />
-        </label>
+      <div className="input-group">
+        <label className="label">Height (cm):</label>
+        <input
+          type="number"
+          value={height}
+          onChange={(e) => setHeight(e.target.value)}
+          placeholder="Enter height in cm"
+          className="input"
+        />
       </div>
-      <div style={styles.inputContainer}>
-        <label>
-          <strong>Weight (kg):</strong>
-          <input
-            type="number"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
-            placeholder="Enter weight in kg"
-            style={styles.input}
-          />
-        </label>
+      <div className="input-group">
+        <label className="label">Weight (kg):</label>
+        <input
+          type="number"
+          value={weight}
+          onChange={(e) => setWeight(e.target.value)}
+          placeholder="Enter weight in kg"
+          className="input"
+        />
       </div>
 
-
-
-      <div style={styles.buttonContainer}>
-        <button onClick={calculateBMI} style={styles.calculateButton}>
+      <div className="button-group">
+        <button onClick={calculateBMI} className="btn calculate-btn">
           Calculate BMI
         </button>
-        <button onClick={resetFields} style={styles.resetButton}>
+        <button onClick={resetFields} className="btn reset-btn">
           Reset
         </button>
       </div>
 
-
-      {error && <div style={styles.error}>{error}</div>}
-
+      {error && <div className="error">{error}</div>}
 
       {bmi && !error && (
-        <div style={styles.resultContainer}>
+        <div className="result">
           <h2>Your BMI: {bmi}</h2>
           <h3 style={{ color: getCategoryColor(category) }}>Category: {category}</h3>
           <p><strong>Gender:</strong> {gender}</p>
@@ -142,55 +126,5 @@ function App() {
     </div>
   );
 }
-
-const styles = {
-  container: {
-    textAlign: "center",
-    margin: "20px auto",
-    maxWidth: "400px",
-    fontFamily: "Arial, sans-serif",
-  },
-  header: {
-    color: "#333",
-  },
-  inputContainer: {
-    marginBottom: "15px",
-  },
-  input: {
-    width: "90%",
-    padding: "10px",
-    marginTop: "5px",
-    fontSize: "16px",
-  },
-  radio: {
-    marginLeft: "10px",
-    marginRight: "10px",
-  },
-  buttonContainer: {
-    marginTop: "10px",
-  },
-  calculateButton: {
-    padding: "10px 20px",
-    backgroundColor: "#4CAF50",
-    color: "white",
-    border: "none",
-    cursor: "pointer",
-  },
-  resetButton: {
-    padding: "10px 20px",
-    backgroundColor: "#f44336",
-    color: "white",
-    border: "none",
-    cursor: "pointer",
-    marginLeft: "10px",
-  },
-  error: {
-    color: "red",
-    marginTop: "20px",
-  },
-  resultContainer: {
-    marginTop: "20px",
-  },
-};
 
 export default App;
