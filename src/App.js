@@ -111,7 +111,6 @@ function App() {
         <div className="result">
           <h2>Your BMI: {bmi}</h2>
           <h3 style={{ color: getCategoryColor(category) }}>Category: {category}</h3>
-          {/* <p><strong>Gender:</strong> {gender}</p> */}
         </div>
       )}
     </div>
