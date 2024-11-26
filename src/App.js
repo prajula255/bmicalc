@@ -72,15 +72,6 @@ function App() {
             />
             Female
           </label>
-          <label>
-            <input
-              type="radio"
-              value="other"
-              checked={gender === "other"}
-              onChange={(e) => setGender(e.target.value)}
-            />
-            Other
-          </label>
         </div>
       </div>
 
@@ -120,7 +111,7 @@ function App() {
         <div className="result">
           <h2>Your BMI: {bmi}</h2>
           <h3 style={{ color: getCategoryColor(category) }}>Category: {category}</h3>
-          <p><strong>Gender:</strong> {gender}</p>
+          {/* <p><strong>Gender:</strong> {gender}</p> */}
         </div>
       )}
     </div>
