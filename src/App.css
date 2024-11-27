@@ -40,7 +40,8 @@
 
 
 body {
-  font-family: 'Arial', sans-serif;
+  /* font-family: 'Arial', sans-serif; */
+  font-family: cursive;
   margin: 0;
   padding: 0;
   display: flex;
@@ -52,8 +53,8 @@ body {
 
 .container {
   text-align: center;
-  background: white;
-  background-color: rgba(151, 150, 150, 0.5);
+  background: rgb(255, 255, 255);
+  background-color: rgba(173, 165, 165, 0.5);
   padding: 20px 30px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
