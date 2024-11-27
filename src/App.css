@@ -112,11 +112,13 @@ body {
 }
 
 .calculate-btn {
+  font-family: cursive;
   background-color: #4CAF50;
   color: white;
 }
 
 .reset-btn {
+  font-family: cursive;
   background-color: #f44336;
   color: white;
   margin-left: 10px;
