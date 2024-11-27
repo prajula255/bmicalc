@@ -48,9 +48,9 @@ function App() {
           "red";
 
   return (
-    <div className="container">
-      <h1 className="header">BMI Calculator</h1>
+    <div className="container" >
 
+      <h1 className="header">BMI Calculator</h1>
       <div className="input-group">
         <label className="label">Gender:</label>
         <div className="radio-group">
