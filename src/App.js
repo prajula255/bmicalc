@@ -48,7 +48,7 @@ function App() {
           "red";
 
   return (
-    <div className="container" >
+    <div className="container">
 
       <h1 className="header">BMI Calculator</h1>
       <div className="input-group">
